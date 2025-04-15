@@ -28,18 +28,20 @@ print("El numero es", dado)
 dinero=1000
 while dinero>0:
     apuesta=int(input("Cuanto dinero quieres apostar? "))
-    if apuesta>dinero:
+    if apuesta > dinero:
         print("No puedes apostar mas de lo que tienes")
-        input("Presiona enter para girar la ruleta")
-        ruleta=rd.randint(0,36)
-        print("Tirando la ruleta...")
-    if ruleta==1:
+        continue
+
+    input("Presiona enter para girar la ruleta")
+    ruleta = rd.randint(0, 36)
+    print("Tirando la ruleta...")
+    if ruleta == 1:
         print("Ganaste la apuesta ya que salio el 1")
-        dinero=dinero+apuesta*2
+        dinero = dinero + apuesta * 2
     else:
         print("Perdiste la apuesta ya que salio el", ruleta)
-        dinero=dinero-apuesta
-        print("Tu dinero ahora es de", dinero)
+        dinero = dinero - apuesta
+    print("Tu dinero ahora es de", dinero)
 
 
 # print("Hola mundo!")
