@@ -41,3 +41,35 @@
 # else:
 #     print("Clave incorrecta")
 
+cant=int(input("Cuantos productos llevara?"))
+total=0
+
+for i in range(cant):
+    print(
+        "Que productos llevara? " \
+        " 1. Rifle " \
+        " 2. Sniper " \
+        " 3. Escopeta " \
+        " 4. Bazooka " 
+    )
+    opcion=input()
+    if opcion == "1":
+        print("El precio del rifle es 5000")
+        total=total+5000
+        print("LLevaste un rifle y tienes un total de ", total)
+    elif opcion == "2":
+        print("El precio del sniper es 10000")
+        total=total+10000
+        print("LLevaste un sniper y tienes un total de ", total)
+    elif opcion == "3":
+        print("El precio de la escopeta es de 3000")
+        total=total+3000
+        print("LLevaste una escopeta y tienes un total de ", total)
+    elif opcion == "4":
+        print("El precio de una bazooka es de 20000")
+        total=total+20000
+        print("Llevaste una bazooka y tienes un total de ", total)
+    else:
+        print("Opcion no valida")
+        break
+    
