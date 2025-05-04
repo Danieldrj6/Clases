@@ -121,3 +121,40 @@ import time as tm
 # descuento_final=arancel-descuento_total
 # print(F"Usted debe pagar {descuento_final}")
 
+# arancel = 200000
+
+# comunas = {
+#     1: ("La Floria", 20),
+#     2: ("La Pintana", 20),
+#     3: ("Puente Alto", 25),
+#     4: ("San Juaquin", 15)
+#         }
+
+# print("\nComunas disponibles: ")
+# for id, (nombre, descuento) in comunas.items():
+#     print(f"{id}, {nombre} = {descuento}%")
+
+# grupo_familiar=int(input("Cuantos miembros hay en su residencia? "))
+
+# if grupo_familiar==1:
+#     descuento_familiar = 2
+# elif grupo_familiar >= 2 and grupo_familiar <= 4:
+#     descuento_familiar = 3
+# else:
+#     descuento_familiar = 4
+
+# comuna_id=int(input("Ingrese su numero de comuna: "))
+
+# if comuna_id in comunas:
+#     comuna_nombre, descuento_comuna = comunas[comuna_id]
+#     total_descuento= descuento_familiar + descuento_comuna
+#     descuento_total = (total_descuento * arancel) / 100
+#     total_pagar = arancel - descuento_total
+
+#     print(f"\nResumen: ")
+#     print(F"Comuna: {comuna_nombre} ({descuento_comuna}%)")
+#     print(f"Descuento por grupo familiar: {descuento_familiar}%")
+#     print(f"Descuento total: {total_descuento}%")
+#     print(f"Total a pagar: ${total_pagar:,.0f}")
+# else:
+#     print("Error")
