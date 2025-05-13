@@ -152,7 +152,7 @@ import time as tm
 #     total_pagar = arancel - descuento_total
 
 #     print(f"\nResumen: ")
-#     print(F"Comuna: {comuna_nombre} ({descuento_comuna}%)")
+#     print(f"Comuna: {comuna_nombre} ({descuento_comuna}%)")
 #     print(f"Descuento por grupo familiar: {descuento_familiar}%")
 #     print(f"Descuento total: {total_descuento}%")
 #     print(f"Total a pagar: ${total_pagar:,.0f}")
