@@ -1,41 +1,43 @@
 biblioteca = [
     {
-        "titulo": "Cien años de soledad",
-        "autor": "Gabriel García Márquez",
+        "titulo": "cien años de soledad",
+        "autor": "gabriel garcia marquez",
         "año": 1967,
-        "genero": "Realismo mágico",
+        "genero": "realismo magico",
         "ejemplares": 4
     },
     {
         "titulo": "1984",
-        "autor": "George Orwell",
+        "autor": "george orwell",
         "año": 1949,
-        "genero": "Distopía",
+        "genero": "distopia",
         "ejemplares": 2
     },
     {
-        "titulo": "Don Quijote de la Mancha",
-        "autor": "Miguel de Cervantes",
+        "titulo": "don quijote de la mancha",
+        "autor": "miguel de cervantes",
         "año": 1605,
-        "genero": "Novela",
+        "genero": "novela",
         "ejemplares": 1
     }
 ]
 
 def mostrar():
+    c = 1
     for libros in biblioteca:
-        print(f'''Libro titulado: {libros["titulo"]}
+        print(f'''ID: {c}: Libro titulado: {libros["titulo"]}
 Autor: {libros["autor"]}
 Lanzado en: {libros["año"]}
 Genero: {libros["genero"]}
 Stock: {libros["ejemplares"]}
 ''')
+        c+=1
 
 def validar_fecha(fecha):
     return len(fecha) == 4 and fecha.isdigit()
 
 def validar_stock(stock):
-    return stock > 0 and stock.isdigit()
+    return stock.isdigit() and int(stock) > 0
 
 def agregar():
     titulo = input("Ingrese el nombre del ejemplar: ")
@@ -58,5 +60,41 @@ def agregar():
     }
     biblioteca.append(nuevo_libro)
     mostrar()
-agregar()
 
+def buscar():
+    busqueda = input("Ingrese autor a buscar: ")
+    for libros in biblioteca:
+        autor = libros["autor"]
+        if busqueda.lower() not in libros["autor"]:
+            print("")
+        else:
+            if busqueda.lower() == autor:
+                print(f'''Libro titulado: {libros["titulo"]}
+Autor: {autor}
+Lanzado en: {libros["año"]}
+Genero: {libros["genero"]}
+Stock: {libros["ejemplares"]}
+''')
+
+def buscar_genero():
+    busqueda = input("Ingrese genero a buscar: ")
+    for libros in biblioteca:
+        genero = libros["genero"]
+        if busqueda.lower() not in libros["genero"]:
+            print("")
+        else:
+            if busqueda.lower() == genero:
+                print(f'''Libro titulado: {libros["titulo"]}
+Autor: {libros["autor"]}
+Lanzado en: {libros["año"]}
+Genero: {libros["genero"]}
+Stock: {libros["ejemplares"]}
+''')
+
+def ejemplares():
+    mostrar()
+    seleccion = int(input("Ingrese numero del libro a actualizar: "))
+    nuevo_stock = int(input("Ingrese stock total: "))
+    biblioteca[seleccion-1][4] = nuevo_stock
+    mostrar()
+ejemplares()
