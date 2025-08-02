@@ -95,6 +95,33 @@ def ejemplares():
     mostrar()
     seleccion = int(input("Ingrese numero del libro a actualizar: "))
     nuevo_stock = int(input("Ingrese stock total: "))
-    biblioteca[seleccion-1][4] = nuevo_stock
+    biblioteca[seleccion-1]["ejemplares"] = nuevo_stock
     mostrar()
-ejemplares()
+
+
+while True:
+    op = int(input('''
+Ingrese opcion:
+                   1. Mostrar libros
+                   2. Agregar libros
+                   3. Buscar por autor
+                   4. Buscar por genero
+                   5. Actualizar ejemplares
+                   6. Salir
+'''))
+    match op:
+        case 1:
+            mostrar()
+        case 2:
+            agregar()
+        case 3:
+            buscar()
+        case 4:
+            buscar_genero()
+        case 5:
+            ejemplares()
+        case 6:
+            print("Saliendo...")
+            break
+        case _:
+            print("ERROR")
